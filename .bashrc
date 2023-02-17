@@ -68,6 +68,3 @@ unset _ps1_symbol
 # Fixup git-bash in non login env
 shopt -q login_shell || . /etc/profile.d/git-prompt.sh
 
-if [[ ! -e ~/.bash-it ]]; then
-    git clone git@git.zhlh6.cn:Bash-it/bash-it.git ~/.bash-it
-fi
