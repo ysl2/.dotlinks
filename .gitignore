@@ -4,6 +4,7 @@
 !Documents/
 !AppData/
 !.config/
+!pip/
 !.minttyrc
 !.bashrc
 !.bash_profile
