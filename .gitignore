@@ -1,6 +1,7 @@
 *
 !.gitignore
 
+!Documents
 !.minttyrc
 !.bashrc
 !.bash_profile
