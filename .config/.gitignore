@@ -1,6 +1,6 @@
 *
 !.gitignore
 
-!ranger/
-!lazygit/
-!pip/
+!ranger
+!lazygit
+!pip
