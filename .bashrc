@@ -1,3 +1,6 @@
+# If not running interactively, don't do anything
+[[ "$-" != *i* ]] && return
+
 export TERM=xterm-256color
 export TERMINFO=/usr/share/terminfo
 
@@ -18,9 +21,6 @@ fi
 
 # Check that we haven't already been sourced.
 ([[ -z ${CYG_SYS_BASHRC} ]] && CYG_SYS_BASHRC="1") || return
-
-# If not running interactively, don't do anything
-[[ "$-" != *i* ]] && return
 
 # If started from sshd, make sure profile is sourced
 if [[ -n "$SSH_CONNECTION" ]] && [[ "$PATH" != *:/usr/bin* ]]; then
