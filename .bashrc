@@ -1,1 +1,1 @@
-../.bashrc
+.dotlib/.bashrc
