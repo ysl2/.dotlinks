@@ -1,11 +1,1 @@
 *
-!.gitignore
-
-!.config/
-!.bashrc
-!.gitconfig
-!.tmux.conf
-!.vimrc
-!.npmrc
-!.yarnrc
-!.condarc
