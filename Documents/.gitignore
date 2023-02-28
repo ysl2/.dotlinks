@@ -1,4 +1,8 @@
+# Ignore all by default.
 *
 !.gitignore
 
-!PowerShell
+# Except these folders:
+!PowerShell/
+
+# Except these files (or links):

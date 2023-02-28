@@ -1,5 +1,9 @@
+# Ignore all by default.
 *
 !.gitignore
 
+# Except these folders:
 !Roaming/
 !Local/
+
+# Except these files (or links):

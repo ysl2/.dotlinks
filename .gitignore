@@ -1,10 +1,14 @@
+# Ignore all by default.
 *
 !.gitignore
 
+# Except these folders:
 !Documents/
 !AppData/
 !.config/
 !pip/
+
+# Except these files (or links):
 !.minttyrc
 !.bashrc
 !.bash_profile

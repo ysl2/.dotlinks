@@ -1,5 +1,9 @@
+# Ignore all by default.
 *
 !.gitignore
 
-!alacritty
+# Except these folders:
+!alacritty/
+
+# Except these files (or links):
 !lazygit
