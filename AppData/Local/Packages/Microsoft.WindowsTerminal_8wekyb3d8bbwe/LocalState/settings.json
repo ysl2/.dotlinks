@@ -9,15 +9,23 @@
                 "action": "copy",
                 "singleLine": false
             },
-            "keys": "ctrl+c"
+            "keys": "ctrl+shift+c"
         },
         {
             "command": "paste",
-            "keys": "ctrl+v"
+            "keys": "ctrl+shift+v"
         },
         {
             "command": "find",
             "keys": "ctrl+shift+f"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+v"
         },
         {
             "command": 
