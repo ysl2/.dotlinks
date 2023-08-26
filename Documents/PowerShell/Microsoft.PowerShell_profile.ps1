@@ -1,3 +1,5 @@
+Set-PSReadLineOption -EditMode Emacs
+
 # Ref: https://github.com/gokcehan/lf/blob/master/etc/lf.ps1
 # Change working dir in powershell to last dir in lf on exit.
 #
@@ -12,7 +14,6 @@
 #     }
 #
 # You may put this in one of the profiles found in $PROFILE.
-#
 
 function lf {
     $tmp = [System.IO.Path]::GetTempFileName()
@@ -36,7 +37,9 @@ function ssh-copy-id {
     )
 	Invoke-Expression "cat ~/.ssh/id_rsa.pub | ssh $command 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'"
 }
-
+function aim {
+    nvim -u ~/.vimrc $args
+}
 Set-Alias lg lazygit
 Set-Alias :q myexit
 
