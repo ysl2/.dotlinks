@@ -27,11 +27,9 @@ function lf {
         }
     }
 }
-
 function myexit {
     Invoke-command -ScriptBlock {exit}
 }
-
 function ssh-copy-id {
     param(
         [string]$command
@@ -39,13 +37,10 @@ function ssh-copy-id {
 	Invoke-Expression "cat ~/.ssh/id_rsa.pub | ssh $command 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'"
 }
 
-
 Set-Alias lg lazygit
 Set-Alias :q myexit
 
-
 Invoke-Expression (&starship init powershell)
-
 
 $localpwshrc = "$HOME\.pwshrc.localhost.ps1"
 if (Test-Path $localpwshrc) { . $localpwshrc }
