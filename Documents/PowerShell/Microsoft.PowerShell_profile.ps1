@@ -32,6 +32,13 @@ function myexit {
     Invoke-command -ScriptBlock {exit}
 }
 
+function ssh-copy-id {
+    param(
+        [string]$command
+    )
+	Invoke-Expression "cat ~/.ssh/id_rsa.pub | ssh $command 'mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys'"
+}
+
 
 Set-Alias lg lazygit
 Set-Alias :q myexit
