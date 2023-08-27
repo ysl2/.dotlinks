@@ -360,5 +360,6 @@
         }
     ],
     "themes": [],
-    "multiLinePasteWarning": false
+    "multiLinePasteWarning": false,
+    "largePasteWarning": false
 }
