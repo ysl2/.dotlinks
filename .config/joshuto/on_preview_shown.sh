@@ -1,0 +1,1 @@
+../../.dotlib/.config/joshuto/on_preview_shown.sh
