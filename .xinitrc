@@ -1,0 +1,2 @@
+exec startdde
+#exec dwm
