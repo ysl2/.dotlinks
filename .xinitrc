@@ -1,2 +1,2 @@
-exec startdde
-#exec dwm
+#exec startdde
+exec dwm
