@@ -1,0 +1,1 @@
+../.dotlib/.dwm/dwm-statusbar.sh
