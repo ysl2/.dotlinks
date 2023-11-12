@@ -1,1 +1,0 @@
-../.dotlib/.dwm/dwm-natural-scrolling.sh
