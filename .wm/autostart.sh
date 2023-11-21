@@ -1,1 +1,0 @@
-../.dotlib/.wm/autostart.sh
