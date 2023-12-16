@@ -1,3 +1,1 @@
-#exec startdde
-exec dwm
-# exec i3
+exec i3
