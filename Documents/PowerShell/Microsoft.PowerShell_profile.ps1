@@ -15,6 +15,9 @@ Set-PSReadLineOption -EditMode Emacs
 #
 # You may put this in one of the profiles found in $PROFILE.
 
+$ENV:STARSHIP_CONFIG = "$HOME\.dotfiles\.config\starship.toml"
+$ENV:EDITOR = "nvim"
+
 function lf {
     $tmp = [System.IO.Path]::GetTempFileName()
     & "C:\ProgramData\chocolatey\bin\lf.exe" -last-dir-path="$tmp" $args
