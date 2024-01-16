@@ -46,6 +46,7 @@ function aim {
 Set-Alias lg lazygit
 Set-Alias :q myexit
 Set-Alias :qa myexit
+Set-Alias py python
 
 Invoke-Expression (&starship init powershell)
 
