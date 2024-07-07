@@ -9,6 +9,9 @@
 #
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
+# Ref: https://github.com/koekeishiya/yabai/issues/692#issuecomment-710810388
+yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
+yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 #
 
 # Ref: https://github.com/josean-dev/dev-environment-files/blob/main/.config/yabai/yabairc
