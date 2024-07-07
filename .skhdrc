@@ -16,6 +16,7 @@ cmd + shift - j : yabai -m window --warp south
 cmd + shift - k : yabai -m window --warp north
 cmd + shift - h : yabai -m window --warp west
 cmd + shift - l : yabai -m window --warp east
+cmd + shift - space : yabai -m window --toggle split
 
 # Ref: https://github.com/koekeishiya/yabai/discussions/803#discussioncomment-2291775
 # Focus space
