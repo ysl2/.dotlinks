@@ -15,6 +15,7 @@ sudo yabai --load-sa
 # disable specific apps
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^iOA$" manage=off
+yabai -m rule --add app="^iFt$" manage=off
 
 # global settings
 yabai -m config                                 \
