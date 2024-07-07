@@ -1,0 +1,52 @@
+# Ref: https://gist.github.com/Krever/74d43fa38c57c42c355df55faa0a00ee
+
+# Toggle mode
+cmd - e : yabai -m space --layout bsp
+cmd - s : yabai -m space --layout stack
+cmd - f : yabai -m window --toggle float
+
+# Focus window
+cmd - j : yabai -m window --focus stack.next || yabai -m window --focus south
+cmd - k : yabai -m window --focus stack.prev || yabai -m window --focus north
+cmd - h : yabai -m window --focus west
+cmd - l : yabai -m window --focus east
+
+# Move window
+cmd + shift - j : yabai -m window --warp south
+cmd + shift - k : yabai -m window --warp north
+cmd + shift - h : yabai -m window --warp west
+cmd + shift - l : yabai -m window --warp east
+
+# Ref: https://github.com/koekeishiya/yabai/discussions/803#discussioncomment-2291775
+# Focus space
+cmd - 1 : yabai -m display --focus $(yabai -m query --displays --space 1 | jq '.index'); skhd -k "ctrl - 1"; sleep 0.3; yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse
+cmd - 2 : yabai -m display --focus $(yabai -m query --displays --space 2 | jq '.index'); skhd -k "ctrl - 2"; sleep 0.3; yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse
+cmd - 3 : yabai -m display --focus $(yabai -m query --displays --space 3 | jq '.index'); skhd -k "ctrl - 3"; sleep 0.3; yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse
+cmd - 4 : yabai -m display --focus $(yabai -m query --displays --space 4 | jq '.index'); skhd -k "ctrl - 4"; sleep 0.3; yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse
+cmd - 5 : yabai -m display --focus $(yabai -m query --displays --space 5 | jq '.index'); skhd -k "ctrl - 5"; sleep 0.3; yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse
+cmd - 6 : yabai -m display --focus $(yabai -m query --displays --space 6 | jq '.index'); skhd -k "ctrl - 6"; sleep 0.3; yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse
+cmd - 7 : yabai -m display --focus $(yabai -m query --displays --space 7 | jq '.index'); skhd -k "ctrl - 7"; sleep 0.3; yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse
+cmd - 8 : yabai -m display --focus $(yabai -m query --displays --space 8 | jq '.index'); skhd -k "ctrl - 8"; sleep 0.3; yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse
+cmd - 9 : yabai -m display --focus $(yabai -m query --displays --space 9 | jq '.index'); skhd -k "ctrl - 9"; sleep 0.3; yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse
+# Move window to space
+cmd + shift - 1 : yabai -m window --space 1; skhd -k "cmd - 1"
+cmd + shift - 2 : yabai -m window --space 2; skhd -k "cmd - 2"
+cmd + shift - 3 : yabai -m window --space 3; skhd -k "cmd - 3"
+cmd + shift - 4 : yabai -m window --space 4; skhd -k "cmd - 4"
+cmd + shift - 5 : yabai -m window --space 5; skhd -k "cmd - 5"
+cmd + shift - 6 : yabai -m window --space 6; skhd -k "cmd - 6"
+cmd + shift - 7 : yabai -m window --space 7; skhd -k "cmd - 7"
+cmd + shift - 8 : yabai -m window --space 8; skhd -k "cmd - 8"
+cmd + shift - 9 : yabai -m window --space 9; skhd -k "cmd - 9"
+
+# Get mouse focus
+cmd - space : yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse
+
+# Open terminal
+# instead of just `alacritty` or `/opt/homebrew/bin/alacritty`
+# cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+# Ref: https://github.com/koekeishiya/yabai/issues/1250#issuecomment-1181616780
+cmd - return : open -n -a 'Alacritty.app'
+
+# i3expo-ng
+cmd - tab : skhd -k "ctrl - up"
