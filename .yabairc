@@ -19,6 +19,7 @@ yabai -m signal --add event=application_terminated action="yabai -m query --wind
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^iOA$" manage=off
 yabai -m rule --add app="^iFt$" manage=off
+yabai -m rule --add app="^WeCom$" manage=off
 
 # global settings
 yabai -m config                                 \
