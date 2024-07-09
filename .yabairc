@@ -14,7 +14,8 @@ yabai -m signal --add event=window_destroyed action="yabai -m query --windows --
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 #
 
-# Ref: https://github.com/josean-dev/dev-environment-files/blob/main/.config/yabai/yabairc
+# Ref: https://github.com/koekeishiya/yabai/issues/638#issue-677284254
+# sleep 3 && yabai -m query --winodws --window > ~/.yabai_focusname
 # disable specific apps
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^iOA$" manage=off

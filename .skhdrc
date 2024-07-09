@@ -50,4 +50,5 @@ cmd - space : yabai -m query --windows --window &> /dev/null || yabai -m window 
 cmd - return : open -n -a 'Alacritty.app'
 
 # i3expo-ng
-cmd - tab : skhd -k "ctrl - up"
+# # Ref: https://github.com/josean-dev/dev-environment-files/blob/main/.config/yabai/yabairc
+# cmd - tab : skhd -k "ctrl - up"
