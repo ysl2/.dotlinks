@@ -52,3 +52,6 @@ cmd - return : open -n -a 'Alacritty.app'
 # i3expo-ng
 # Ref: https://github.com/josean-dev/dev-environment-files/blob/main/.config/yabai/yabairc
 alt - tab : skhd -k "ctrl - up"
+
+# Emergency quit.
+cmd + shift - q : yabai --stop-service; skhd --stop-service
