@@ -11,6 +11,14 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+[gaps]
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       10
+outer.bottom =     10
+outer.top =        10
+outer.right =      10
+
 [mode.main.binding]
 # See: https://nikitabobko.github.io/AeroSpace/goodness#open-a-new-window-with-applescript
 # alt-enter = '''exec-and-forget osascript -e '
@@ -43,8 +51,6 @@ alt-w = 'layout h_accordion' # 'layout tabbed' in i3
 alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 
 alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
-
-alt-shift-q = 'close'
 
 # Not supported, because this command is redundant in AeroSpace mental model.
 # See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
@@ -79,6 +85,8 @@ alt-shift-0 = 'move-node-to-workspace 10'
 alt-shift-c = 'reload-config'
 
 alt-r = 'mode resize'
+
+alt-shift-q = 'close'
 
 [mode.resize.binding]
 h = 'resize width -50'
