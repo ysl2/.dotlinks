@@ -63,14 +63,19 @@ for m in $(aerospace list-monitors | awk '{print $1}'); do
     for i in $(aerospace list-workspaces --monitor "$m"); do
         sketchybar --add item space."$i" left \
             --subscribe space."$i" aerospace_workspace_change \
-            --set space."$i" script="$PLUGIN_DIR/aerospace.sh "$i" $m" \
-            background.color=0x44ffffff \
-            background.corner_radius=5 \
-            background.height=20 \
-            background.drawing=off \
-            label="$i" \
-            click_script="aerospace workspace $i" \
-            display=0
+            --set space."$i" \
+                background.color=0x44ffffff \
+                background.corner_radius=5 \
+                background.height=20 \
+                background.drawing=off \
+                label="$i" \
+                icon.padding_left=0 \
+                icon.padding_right=0 \
+                label.padding_left=10 \
+                label.padding_right=10 \
+                click_script="aerospace workspace $i" \
+                script="$PLUGIN_DIR/aerospace.sh "$i" $m" \
+                display=0
     done
     for i in $(aerospace list-workspaces --monitor "$m" --empty no); do
         sketchybar --set space."$i" display="$m"
