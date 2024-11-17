@@ -114,7 +114,7 @@ sketchybar --add item clock right \
            --subscribe volume volume_change
 
 wecom=(
-    update_freq=0.5
+    update_freq=1
     icon='󰘑^'
     script="$PLUGIN_DIR/app.sh WeCom"
     click_script='open -a /Applications/企业微信.app'
