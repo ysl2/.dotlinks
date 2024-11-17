@@ -59,18 +59,24 @@ sketchybar --default "${default[@]}"
 # done
 
 sketchybar --add event aerospace_workspace_change
-for sid in $(aerospace list-workspaces --all); do
-    sketchybar --add item space.$sid left \
-        --subscribe space.$sid aerospace_workspace_change \
-        --set space.$sid \
-        background.color=0x44ffffff \
-        background.corner_radius=5 \
-        background.height=20 \
-        background.drawing=off \
-        label="$sid" \
-        click_script="aerospace workspace $sid" \
-        script="$PLUGIN_DIR/aerospace.sh $sid"
+for m in $(aerospace list-monitors | awk '{print $1}'); do
+    for i in $(aerospace list-workspaces --monitor "$m"); do
+        sketchybar --add item space."$i" left \
+            --subscribe space."$i" aerospace_workspace_change \
+            --set space."$i" script="$PLUGIN_DIR/aerospace.sh "$i" $m" \
+            background.color=0x44ffffff \
+            background.corner_radius=5 \
+            background.height=20 \
+            background.drawing=off \
+            label="$i" \
+            click_script="aerospace workspace $i" \
+            display=0
+    done
+    for i in $(aerospace list-workspaces --monitor "$m" --empty no); do
+        sketchybar --set space."$i" display="$m"
+    done
 done
+sketchybar --set space."$(aerospace list-workspaces --focused)" background.drawing=on
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
