@@ -1,3 +1,4 @@
+#!/bin/bash
 # This is a demo config to showcase some of the most important commands.
 # It is meant to be changed and configured, as it is intentionally kept sparse.
 # For a (much) more advanced configuration example see my dotfiles:
@@ -12,7 +13,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=40 blur_radius=30 color=0x40000000
+sketchybar --bar position=top height=35 blur_radius=30 color=0x40000000
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -56,8 +57,8 @@ sketchybar --default "${default[@]}"
 #   )
 #   sketchybar --add space space."$sid" left --set space."$sid" "${space[@]}"
 # done
-sketchybar --add event aerospace_workspace_change
 
+sketchybar --add event aerospace_workspace_change
 for sid in $(aerospace list-workspaces --all); do
     sketchybar --add item space.$sid left \
         --subscribe space.$sid aerospace_workspace_change \
@@ -93,13 +94,21 @@ sketchybar --add item chevron left \
 # https://felixkratz.github.io/SketchyBar/config/events
 
 sketchybar --add item clock right \
-           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
+           --set clock update_freq=1 icon=  script="$PLUGIN_DIR/clock.sh" \
+           --add item battery right \
+           --set battery update_freq=10 script="$PLUGIN_DIR/battery.sh" \
+           --subscribe battery system_woke power_source_change \
            --add item volume right \
            --set volume script="$PLUGIN_DIR/volume.sh" \
-           --subscribe volume volume_change \
-           --add item battery right \
-           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change
+           --subscribe volume volume_change
+
+wecom=(
+    update_freq=0.5
+    icon='󰘑^'
+    script="$PLUGIN_DIR/app.sh WeCom"
+    click_script='open -a /Applications/企业微信.app'
+)
+sketchybar --add item wecom right --set wecom "${wecom[@]}"
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
