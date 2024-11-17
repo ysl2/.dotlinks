@@ -84,8 +84,11 @@ alt-9 = 'workspace 9'
 # alt-0 = 'workspace 10'
 # TODO: Need fix `alt-n` to keep same hehaviour with i3.
 # Ref: https://github.com/nikitabobko/AeroSpace/pull/118
-alt-n = "exec-and-forget aerospace list-workspaces --monitor focused --empty no | aerospace workspace next || aerospace workspace $(aerospace list-workspaces --monitor focused --empty no | head -n 1)"
-alt-p = "exec-and-forget aerospace list-workspaces --monitor focused --empty no | aerospace workspace prev || aerospace workspace $(aerospace list-workspaces --monitor focused --empty no | tail -n 1)"
+# Bug: alt-p cannot jump back when a workspae is empty
+# alt-n = "exec-and-forget aerospace list-workspaces --monitor focused --empty no | aerospace workspace next || aerospace workspace $(aerospace list-workspaces --monitor focused --empty no | head -n 1)"
+# alt-p = "exec-and-forget aerospace list-workspaces --monitor focused --empty no | aerospace workspace prev || aerospace workspace $(aerospace list-workspaces --monitor focused --empty no | tail -n 1)"
+alt-n = 'workspace next'
+alt-p = 'workspace prev'
 
 alt-shift-1 = 'exec-and-forget aerospace move-node-to-workspace 1 && aerospace workspace 1'
 alt-shift-2 = 'exec-and-forget aerospace move-node-to-workspace 2 && aerospace workspace 2'
