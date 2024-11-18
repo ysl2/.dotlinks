@@ -61,6 +61,8 @@ sketchybar --default "${default[@]}"
 sketchybar --add event aerospace_workspace_change
 for m in $(aerospace list-monitors | awk '{print $1}'); do
     for i in $(aerospace list-workspaces --monitor "$m"); do
+        # NOTE: Or we might need `space_windows_change` ?
+        # Ref: https://yangzhang.site/Note/Mac/sketchybar/#_7
         sketchybar --add item space."$i" left \
             --subscribe space."$i" aerospace_workspace_change \
             --set space."$i" \
