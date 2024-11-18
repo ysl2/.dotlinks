@@ -115,6 +115,14 @@ sketchybar --add item clock right \
            --set volume script="$PLUGIN_DIR/volume.sh" \
            --subscribe volume volume_change
 
+input_method=(
+    update_freq=1
+    script="$PLUGIN_DIR/input_method.sh"
+    icon.padding_left=0
+    icon.padding_right=0
+)
+sketchybar --add item input_method right --set input_method "${input_method[@]}"
+
 wecom=(
     update_freq=1
     icon='󰘑^'
