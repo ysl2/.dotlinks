@@ -6,7 +6,7 @@ main() {
     local m="$2"
 
     if [ "$i" = "$(aerospace list-workspaces --focused)" ]; then
-        sketchybar --set space."$i" background.drawing=on display="$m"
+        sketchybar --set "$NAME" background.drawing=on display="$m"
         return
     fi
     if [ -n "$(aerospace list-windows --workspace "$i")" ]; then
