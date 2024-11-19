@@ -111,9 +111,15 @@ sketchybar --add item clock right \
            --add item battery right \
            --set battery update_freq=10 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change \
-           --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
-           --subscribe volume volume_change
+
+volume=(
+    update_freq=1
+    script="$PLUGIN_DIR/volume.sh"
+)
+sketchybar --add item volume right \
+           --subscribe volume volume_change \
+           --set volume "${volume[@]}"
+
 
 input_method=(
     update_freq=1

@@ -23,5 +23,6 @@ brew services start borders
 ```bash
 brew tap FelixKratz/formulae
 brew install sketchybar --HEAD
+brew install switchaudio-osx
 brew services start sketchybar
 ```
