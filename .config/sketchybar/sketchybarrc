@@ -134,6 +134,7 @@ wecom=(
     icon='󰘑^'
     script="$PLUGIN_DIR/app.sh WeCom"
     click_script='open -a /Applications/企业微信.app'
+    display=0
 )
 sketchybar --add item wecom right --set wecom "${wecom[@]}"
 
