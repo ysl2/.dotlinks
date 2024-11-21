@@ -103,19 +103,22 @@ alt-shift-9 = 'exec-and-forget aerospace move-node-to-workspace 9 && aerospace w
 
 alt-shift-c = 'reload-config'
 
-alt-r = 'mode resize'
-
 alt-shift-q = 'close --quit-if-last-window'
 
 alt-tab = 'workspace-back-and-forth'
 
-[mode.resize.binding]
-h = 'resize width -50'
-j = 'resize height +50'
-k = 'resize height -50'
-l = 'resize width +50'
-enter = 'mode main'
-esc = 'mode main'
+# alt-r = 'mode resize'
+#
+# [mode.resize.binding]
+# h = 'resize width -50'
+# j = 'resize height +50'
+# k = 'resize height -50'
+# l = 'resize width +50'
+# enter = 'mode main'
+# esc = 'mode main'
+
+alt-minus = 'resize smart -50'
+alt-equal = 'resize smart +50'
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Preview'
