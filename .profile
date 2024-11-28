@@ -1,1 +1,1 @@
-.dotlib/.profile
+.dotfiles/.profile
