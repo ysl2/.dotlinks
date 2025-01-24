@@ -138,5 +138,14 @@ wecom=(
 )
 sketchybar --add item wecom right --set wecom "${wecom[@]}"
 
+wechat=(
+    update_freq=1
+    icon='󰘑'
+    script="$PLUGIN_DIR/app.sh WeChat"
+    click_script='open -a /Applications/WeChat.app'
+    display=0
+)
+sketchybar --add item wechat right --set wechat "${wechat[@]}"
+
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
