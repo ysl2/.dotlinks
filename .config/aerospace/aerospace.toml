@@ -3,11 +3,14 @@
 
 start-at-login = true
 
-# Run Sketchybar together with AeroSpace
-# sketchbar has a built-in detection of already running process,
-# so it won't be run twice on AeroSpace restart
+# Run Sketchybar and JankyBorders together with AeroSpace
 after-startup-command = [
+    # sketchbar has a built-in detection of already running process,
+    # so it won't be run twice on AeroSpace restart
     'exec-and-forget sketchybar',
+
+    # JankyBorders has a built-in detection of already running process,
+    # so it won't be run twice on AeroSpace restart
     'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
 ]
 
@@ -123,6 +126,11 @@ alt-tab = 'workspace-back-and-forth'
 alt-minus = 'resize smart -50'
 alt-equal = 'resize smart +50'
 
+# Ref: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
 [[on-window-detected]]
 if.app-id = 'com.apple.Preview'
-run = ['layout floating']
+run = 'layout floating'
+[[on-window-detected]]
+# For matplotlib's preview configuration tool.
+if.window-title-regex-substring = 'Subplot configuration tool'
+run = 'layout floating'
