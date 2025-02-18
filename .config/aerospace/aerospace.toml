@@ -134,3 +134,6 @@ run = 'layout floating'
 # For matplotlib's preview configuration tool.
 if.window-title-regex-substring = 'Subplot configuration tool'
 run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
