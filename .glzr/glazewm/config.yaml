@@ -2,11 +2,17 @@ general:
   # Commands to run when the WM has started. This is useful for running a
   # script or launching another application.
   # Example: The below command launches Zebar.
-  startup_commands: ['shell-exec zebar']
+  startup_commands: [
+    'shell-exec yasb',
+    'shell-exec pythonw "%USERPROFILE%\.glzr\glazewm\autotiling.py"',
+  ]
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
-  shutdown_commands: ['shell-exec taskkill /IM zebar.exe /F']
+  shutdown_commands: [
+    'shell-exec taskkill /IM yasb.exe /F',
+    'shell-exec taskkill /IM pythonw.exe /F'
+  ]
 
   # Commands to run after the WM config is reloaded.
   config_reload_commands: []
@@ -20,7 +26,7 @@ general:
 
   cursor_jump:
     # Whether to automatically move the cursor on the specified trigger.
-    enabled: true
+    enabled: false
 
     # Trigger for cursor jump:
     # - 'monitor_focus': Jump when focus changes between monitors.
@@ -37,21 +43,21 @@ general:
   # effect if `hide_method: 'hide'`.
   # - 'true': Show all windows (regardless of workspace).
   # - 'false': Only show windows from the currently shown workspaces.
-  show_all_in_taskbar: false
+  show_all_in_taskbar: true
 
 gaps:
   # Whether to scale the gaps with the DPI of the monitor.
   scale_with_dpi: true
 
   # Gap between adjacent windows.
-  inner_gap: '20px'
+  inner_gap: '10px'
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '60px'
-    right: '20px'
-    bottom: '20px'
-    left: '20px'
+    top: '40px'
+    right: '10px'
+    bottom: '10px'
+    left: '10px'
 
 window_effects:
   # Visual effects to apply to the focused window.
@@ -109,7 +115,7 @@ window_behavior:
       centered: true
 
       # Whether to show floating windows as always on top.
-      shown_on_top: false
+      shown_on_top: true
 
     fullscreen:
       # Maximize the window if possible. If the window doesn't have a
@@ -208,8 +214,10 @@ keybindings:
 
   # Change tiling direction. This determines where new tiling windows will
   # be inserted.
-  - commands: ['toggle-tiling-direction']
+  - commands: ['set-tiling-direction horizontal']
     bindings: ['alt+v']
+  - commands: ['set-tiling-direction vertical']
+    bindings: ['alt+b']
 
   # Change focus from tiling windows -> floating -> fullscreen.
   - commands: ['wm-cycle-focus']
@@ -250,18 +258,27 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec cmd']
+  # - commands: ['shell-exec C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe']
+  # - commands: ['shell-exec %USERPROFILE%\.vocal\Microsoft.WindowsTerminal\bin\wt.exe']
+  # - commands: ['shell-exec %USERPROFILE%\.vocal\wezterm\bin\wezterm-gui.exe']
+  - commands: ['shell-exec %USERPROFILE%\.vocal\wezterm\bin\wezterm-gui.exe']
     bindings: ['alt+enter']
+
+  - commands: ['shell-exec %USERPROFILE%\AppData\Local\FlowLauncher\Flow.Launcher.exe']
+    bindings: ['alt+d']
+
+  - commands: ['shell-exec C:\tools\snipaste\Snipaste.exe snip']
+    bindings: ['alt+ctrl+a']
 
   # Focus the next/previous active workspace defined in `workspaces` config.
   - commands: ['focus --next-active-workspace']
-    bindings: ['alt+s']
+    bindings: ['alt+n']
   - commands: ['focus --prev-active-workspace']
-    bindings: ['alt+a']
+    bindings: ['alt+p']
 
   # Focus the workspace that last had focus.
   - commands: ['focus --recent-workspace']
-    bindings: ['alt+d']
+    bindings: ['alt+tab']
 
   # Change focus to a workspace defined in `workspaces` config.
   - commands: ['focus --workspace 1']
