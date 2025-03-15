@@ -2,7 +2,10 @@ general:
   # Commands to run when the WM has started. This is useful for running a
   # script or launching another application.
   # Example: The below command launches Zebar.
-  startup_commands: ['shell-exec zebar']
+  startup_commands: [
+    'shell-exec zebar',
+    'shell-exec pythonw "C:\Users\Songli Yu\.glzr\glazewm\autotiling.py"',
+  ]
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
@@ -44,14 +47,14 @@ gaps:
   scale_with_dpi: true
 
   # Gap between adjacent windows.
-  inner_gap: '20px'
+  inner_gap: '10px'
 
   # Gap between windows and the screen edge.
   outer_gap:
-    top: '60px'
-    right: '20px'
-    bottom: '20px'
-    left: '20px'
+    top: '40px'
+    right: '10px'
+    bottom: '10px'
+    left: '10px'
 
 window_effects:
   # Visual effects to apply to the focused window.
@@ -250,18 +253,25 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ['shell-exec cmd']
+  # - commands: ['shell-exec C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe']
+  - commands: ['shell-exec pwsh']
     bindings: ['alt+enter']
+
+  - commands: ['shell-exec C:\Users\Songli Yu\AppData\Local\FlowLauncher\Flow.Launcher.exe']
+    bindings: ['alt+d']
+
+  - commands: ['shell-exec C:\tools\snipaste\Snipaste.exe snip']
+    bindings: ['alt+ctrl+a']
 
   # Focus the next/previous active workspace defined in `workspaces` config.
   - commands: ['focus --next-active-workspace']
-    bindings: ['alt+s']
+    bindings: ['alt+n']
   - commands: ['focus --prev-active-workspace']
-    bindings: ['alt+a']
+    bindings: ['alt+p']
 
   # Focus the workspace that last had focus.
   - commands: ['focus --recent-workspace']
-    bindings: ['alt+d']
+    bindings: ['alt+tab']
 
   # Change focus to a workspace defined in `workspaces` config.
   - commands: ['focus --workspace 1']
