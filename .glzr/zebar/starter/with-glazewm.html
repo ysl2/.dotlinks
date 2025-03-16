@@ -33,6 +33,7 @@
         battery: { type: 'battery' },
         memory: { type: 'memory' },
         weather: { type: 'weather' },
+        systray: { type: 'systray' },
       });
 
       createRoot(document.getElementById('root')).render(<App />);
@@ -220,6 +221,20 @@
                   {Math.round(output.weather.celsiusTemp)}°C
                 </div>
               )}
+
+              {output.systray && (
+                <div className="systray">
+                  {output.systray.icons.map(icon => (
+                    <img
+                      className="systray-icon"
+                      src={icon.iconUrl}
+                      title={icon.id}
+                      key={icon.id}
+                    />
+                  ))}
+                </div>
+              )}
+
             </div>
           </div>
         );
