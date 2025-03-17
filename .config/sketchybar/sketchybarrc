@@ -135,7 +135,7 @@ sketchybar --add item input_method right --set input_method "${input_method[@]}"
 wecom=(
     update_freq=1
     icon='󰘑^'
-    script="$PLUGIN_DIR/app.sh WeCom"
+    script="$PLUGIN_DIR/app.sh 企业微信"
     click_script='open -a /Applications/企业微信.app'
     display=0
 )
