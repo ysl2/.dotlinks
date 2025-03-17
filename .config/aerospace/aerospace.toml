@@ -137,3 +137,11 @@ run = 'layout floating'
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.tencent.WeWorkMac'
+if.window-title-regex-substring = ''
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'com.tencent.weterm'
+if.window-title-regex-substring = 'OA Login'
+run = 'layout floating'
