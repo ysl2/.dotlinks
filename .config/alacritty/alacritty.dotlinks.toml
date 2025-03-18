@@ -1,0 +1,10 @@
+[window]
+decorations = 'Buttonless'
+startup_mode = 'Maximized'
+
+[keyboard]
+bindings = [
+    { key = 'Space', mods = 'Shift|Command',  mode = '~Search',    action = 'ToggleViMode'   },
+    { key = 'Space', mods = 'Shift|Command',  mode = 'Vi|~Search', action = 'ScrollToBottom' },
+    { key = 'Space', mods = 'Shift|Command',  mode = 'Vi|~Search', action = 'ClearSelection' },
+]
