@@ -1,0 +1,5 @@
+[window]
+decorations = 'None'
+
+[terminal]
+shell = { program = 'pwsh', args = ['-NoLogo -WorkingDirectory ~'] }
