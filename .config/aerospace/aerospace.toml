@@ -45,7 +45,8 @@ outer.right =      10
 #     activate
 # end tell'
 # '''
-alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+# alt-enter = 'exec-and-forget open -n /Applications/WezTerm.app'
+alt-enter = 'exec-and-forget ~/.vocal/alacritty'
 
 # i3 wraps focus by default
 alt-h =         'focus --boundaries-action wrap-around-the-workspace left'
