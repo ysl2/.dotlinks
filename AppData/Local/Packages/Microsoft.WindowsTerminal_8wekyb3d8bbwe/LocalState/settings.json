@@ -6,7 +6,7 @@
     "confirmCloseAllTabs": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
+    "defaultProfile": "{5aebf7ac-4981-5be1-874a-cc7137deeab1}",
     "disableAnimations": true,
     "initialPosition": ",",
     "keybindings": [],
@@ -89,6 +89,12 @@
                 "hidden": false,
                 "name": "Nushell",
                 "source": "nu"
+            },
+            {
+                "guid": "{5aebf7ac-4981-5be1-874a-cc7137deeab1}",
+                "hidden": false,
+                "name": "Arch",
+                "source": "Microsoft.WSL"
             }
         ]
     },
