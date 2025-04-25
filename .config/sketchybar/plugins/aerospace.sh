@@ -5,9 +5,9 @@ main() {
     local i="$1"
     local m="$2"
 
-    # if [ "$i" = "$(aerospace list-workspaces --focused)" ]; then
     # Highlight the focused workspace.
-    if [ "$i" = "$FOCUSED_WORKSPACE" ]; then
+    if { [ "$SENDER" = aerospace_workspace_change ] && [ "$i" = "$FOCUSED_WORKSPACE" ]; } ||
+        { [ "$SENDER" = aerospace_focus_change ] && [ "$i" = "$(aerospace list-workspaces --focused)" ]; }; then
         sketchybar --set "$NAME" background.drawing=on display="$m" &
     else
         sketchybar --set "$NAME" background.drawing=off &
@@ -22,6 +22,6 @@ main() {
 }
 
 
-if [ "$SENDER" = aerospace_workspace_change ]; then
+if [ "$SENDER" = aerospace_workspace_change ] || [ "$SENDER" = aerospace_focus_change ]; then
     main "$@"
 fi

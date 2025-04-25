@@ -61,13 +61,14 @@ sketchybar --default "${default[@]}"
 # NOTE:
 # Codes here are only for initializing the workspaces. We cannot dynamically set workspace status here.
 # We can dynamically set workspace status in `script="$PLUGIN_DIR/aerospace.sh "$i" $m"`.
-sketchybar --add event aerospace_workspace_change
+sketchybar --add event aerospace_workspace_change \
+    --add event aerospace_focus_change
 for m in $(aerospace list-monitors | awk '{print $1}'); do
     for i in $(aerospace list-workspaces --monitor "$m"); do
         # NOTE: Or we might need `space_windows_change` ?
         # Ref: https://yangzhang.site/Note/Mac/sketchybar/#_7
         sketchybar --add item space."$i" left \
-            --subscribe space."$i" aerospace_workspace_change \
+            --subscribe space."$i" aerospace_workspace_change aerospace_focus_change \
             --set space."$i" \
                 background.color=0x44ffffff \
                 background.corner_radius=5 \
