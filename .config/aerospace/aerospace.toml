@@ -112,7 +112,8 @@ alt-shift-9 = 'exec-and-forget aerospace move-node-to-workspace 9 && aerospace w
 
 alt-shift-c = 'reload-config'
 
-alt-shift-q = 'close --quit-if-last-window'
+# alt-shift-q = 'close --quit-if-last-window'
+alt-shift-q = 'close'
 
 alt-tab = 'workspace-back-and-forth'
 
