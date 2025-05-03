@@ -25,8 +25,8 @@ on-focus-changed = ['exec-and-forget sketchybar --trigger aerospace_focus_change
 # But the feature is very helpful.
 # Normalizations eliminate all sorts of weird tree configurations that don't make sense.
 # Give normalizations a chance and enable them back.
-enable-normalization-flatten-containers = false
-enable-normalization-opposite-orientation-for-nested-containers = false
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
 
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
@@ -62,8 +62,8 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 # Consider using 'join-with' command as a 'split' replacement if you want to enable normalizations
-alt-v = 'split horizontal'
-alt-b = 'split vertical'
+# alt-v = 'split horizontal'
+# alt-b = 'split vertical'
 
 alt-f = 'fullscreen'
 
