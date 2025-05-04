@@ -3,13 +3,12 @@
 
 main() {
     local label
-    label="$(lsappinfo -all list | grep "$1" | grep -Eo "\"StatusLabel\"=\{ \"label\"=\"?(.*?)\"? \}" | sed 's/\"StatusLabel\"={ \"label\"=\(.*\) }/\1/g')"
-
-    if [[ ! "$label" =~ ^\".*\"$ ]]; then
+    label="$(lsappinfo -all list | grep "$1")"
+    if [ -z "$label" ]; then
         sketchybar --set "$NAME" label=0 display=0
         return
     fi
-    label="$(echo "$label" | sed 's/^"//' | sed 's/"$//')"
+    label="$(echo "$label" | grep -Eo "\"StatusLabel\"=\{ \"label\"=\"?(.*?)\"? \}" | sed 's/\"StatusLabel\"={ \"label\"=\(.*\) }/\1/g' | sed 's/^"//' | sed 's/"$//')"
     if [ -z "$label" ]; then
         sketchybar --set "$NAME" label=0 display=active
         return
